@@ -3,7 +3,7 @@
 
   var friends = {};
   var interval;
-  const regex = /facebook.com\/(\S+)\?.*/g;
+  const regex = /facebook\.com\/([^/?]+)/g;
 
   function send_new_friends() {
     var new_friends = {};

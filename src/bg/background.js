@@ -1,5 +1,4 @@
 
-
 function followNextFriend(friends) {
   for(user in friends) {
     if(!friends[user].follow) {
@@ -30,7 +29,7 @@ function saveFriends(new_friends, friends) {
 }
 
 function saveFollow(tab, friends) {
-  const regex = /facebook.com\/(\S+)\?.*/g;
+  const regex = /facebook\.com\/([^/?]+)/g;
   let m = regex.exec(tab.url);
   let username = m[1];
   friends[username].follow = true;
