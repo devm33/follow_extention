@@ -32,6 +32,7 @@ function saveFollow(tab, friends) {
   const regex = /facebook\.com\/([^/?]+)/g;
   let m = regex.exec(tab.url);
   let username = m[1];
+  console.log('just followed', username, tab.url);
   friends[username].follow = true;
   chrome.tabs.remove(tab.id);
   chrome.storage.local.set({friends: friends}, function() {
@@ -40,7 +41,7 @@ function saveFollow(tab, friends) {
 }
 
 chrome.runtime.onMessage.addListener(function(req, sender, sendResponse) {
-  console.log('received message', req);
+  console.log('received message', req, sender.tab.url);
   chrome.storage.local.get(null, function(data) {
     if(req.hasOwnProperty("friends")) {
       saveFriends(req.friends, data.friends);
