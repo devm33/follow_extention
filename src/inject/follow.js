@@ -2,7 +2,7 @@
   'use strict';
 
   // click the follow button
-  var follows = $('a:contains("Follow")');
+  var follows = $('.fbTimelineTopSection a:contains("Follow")');
   if(follows.length > 0) {
     follows[0].click();
 
