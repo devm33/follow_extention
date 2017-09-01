@@ -31,6 +31,6 @@
     $("body").scrollTop(Number.MAX_SAFE_INTEGER);
   }
 
-  interval = setInterval(scroll_bottom, 1000);
+  interval = setInterval(scroll_bottom, 3000);
 
 }(jQuery));
