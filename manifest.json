@@ -1,0 +1,45 @@
+{
+  "name": "Facebook Follow",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Extension to follow all facebook friends",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://www.facebook.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/*"
+      ],
+      "exclude_matches": [
+        "https://www.facebook.com/devm33*"
+      ],
+      "js": [
+        "js/jquery.js",
+        "src/inject/follow.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.facebook.com/devm33/friends"
+      ],
+      "js": [
+        "js/jquery.js",
+        "src/inject/friends.js"
+      ]
+    }
+  ]
+}
