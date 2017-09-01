@@ -9,4 +9,4 @@
 
   chrome.runtime.sendMessage({followed: true}, function() {});
 
-}(jQuery$));
+}(jQuery));

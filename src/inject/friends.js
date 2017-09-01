@@ -32,4 +32,4 @@
 
   interval = setInterval(scroll_bottom, 1000);
 
-}(jQuery$));
+}(jQuery));
