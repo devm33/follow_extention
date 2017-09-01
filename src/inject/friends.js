@@ -25,9 +25,10 @@
 
   function scroll_bottom() {
     if(!send_new_friends()) {
+      console.log('done scrolling to the bottom all friends sent');
       clearInterval(interval);
     }
-    $(body).scrollTop(Number.MAX_SAFE_INTEGER);
+    $("body").scrollTop(Number.MAX_SAFE_INTEGER);
   }
 
   interval = setInterval(scroll_bottom, 1000);
