@@ -13,18 +13,18 @@
         if(confirm.length > 0) {
           confirm[0].click();
         }
-        markFollowed();
+        markFollowed(10);
       }, 2000);
     } else {
-      markFollowed();
+      markFollowed(0);
     }
   }
 
-  function markFollowed() {
+  function markFollowed(wait) {
     // wait a few seconds then tell bg to follow the next friend
     setTimeout(function() {
       chrome.runtime.sendMessage({followed: true}, function() {});
-    }, 10 * 1000);
+    }, 10 * wait);
   }
 
   // wait a second then click follow
