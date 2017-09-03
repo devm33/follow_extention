@@ -14,7 +14,7 @@
           confirm[0].click();
         }
         markFollowed();
-      }, 200);
+      }, 2000);
     } else {
       markFollowed();
     }
